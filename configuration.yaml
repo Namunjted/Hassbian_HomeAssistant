@@ -1,9 +1,9 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: Home
+  name: LopHocVui
   # Location required to calculate the time the sun rises and sets
-  latitude: 0
-  longitude: 0
+  latitude: 20.980842
+  longitude: 105.787385
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   # metric for Metric, imperial for Imperial
