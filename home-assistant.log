@@ -1,0 +1,1 @@
+2018-09-02 09:35:36 ERROR (Thread-2) [homeassistant.util.yaml] YAML file /home/homeassistant/.homeassistant/configuration.yaml contains duplicate key "sensor". Check lines 56 and 67.

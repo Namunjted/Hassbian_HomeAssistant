@@ -1,0 +1,12 @@
+  ethernet:
+    name: Enthernet
+    entities:
+      - sensor.ipv4_address_wlan0
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping
+  systemd:
+    name: Systemd
+    entities:
+      - sensor.cpu_speed
+      - sensor.disk_use_percent_home

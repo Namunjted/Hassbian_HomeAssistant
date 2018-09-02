@@ -5,7 +5,7 @@ homeassistant:
   latitude: 20.980842
   longitude: 105.787385
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 20
+  elevation: 0
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -63,6 +63,25 @@ tts:
 
 # Cloud
 cloud:
+
+# Example configuration.yaml entry
+sensor:
+  - platform: cpuspeed
+  - platform: speedtest
+    minute:
+      - 0
+      - 12
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: ipv4_address
+        arg: wlan0
+      - type: memory_free
 
 group: !include groups.yaml
 automation: !include automations.yaml
