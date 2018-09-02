@@ -1,6 +1,7 @@
 # Example .gitignore file for your config dir
+*
 !*.yaml
 !.gitignore
-*.log
-*.db
+!*.log
+!*.db
 secrets.yaml
