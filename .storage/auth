@@ -1,0 +1,37 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "lophocvui"
+                },
+                "id": "170573688e9d436cae0b5127d8e8bcaf",
+                "user_id": "0ad2c2330ad64af1aae85013cb2e96b2"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_id": "http://192.168.1.8:8123/",
+                "created_at": "2018-09-02T08:26:51.178586+00:00",
+                "id": "8f97fc25859048b0a84f1ce92fc66623",
+                "jwt_key": "6627165309eb33b68fe16ab7b44e370b6461d97016c3c6ac2276d46cabb3888dc5bf8c749318ff3feb47b59c799e83f2e5d799c46f0ab644e199d1e4c377a609",
+                "token": "5189f4989ad3a6aca9eb8629163bb854e26c315fe2fdf0573252fbad28155075f2a3feb5e360052cfbe03f7a4e27915fc9516e5a9b9913900b69362fb3f89073",
+                "user_id": "0ad2c2330ad64af1aae85013cb2e96b2"
+            }
+        ],
+        "users": [
+            {
+                "id": "0ad2c2330ad64af1aae85013cb2e96b2",
+                "is_active": true,
+                "is_owner": true,
+                "name": "lophocvui",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}
