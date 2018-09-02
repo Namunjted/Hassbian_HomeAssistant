@@ -5,5 +5,3 @@
 *.log
 *.db
 secrets.yaml
-home-assistant.log
-home-assistant_v2.db
