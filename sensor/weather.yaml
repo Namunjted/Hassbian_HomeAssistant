@@ -1,0 +1,12 @@
+  - platform: moon
+  - platform: yr
+    name: Weather
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - humidity
+      - fog
+      - cloudiness

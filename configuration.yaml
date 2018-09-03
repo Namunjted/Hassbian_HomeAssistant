@@ -64,25 +64,12 @@ tts:
 # Cloud
 cloud:
 
-# Example configuration.yaml entry
-sensor:
-  - platform: cpuspeed
-  - platform: speedtest
-    minute:
-      - 0
-      - 12
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /home
-      - type: ipv4_address
-        arg: wlan0
-      - type: memory_free
+# Sensor
+sensor: !include_dir_merge_list sensor/
 
+# Weather
+weather: 
+  - platform: yweather
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

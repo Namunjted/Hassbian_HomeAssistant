@@ -1,0 +1,5 @@
+ - platform: cpuspeed
+ - platform: systemmonitor
+   resources:
+     - type: memory_use_percent
+     - type: memory_free

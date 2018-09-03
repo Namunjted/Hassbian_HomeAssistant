@@ -1,0 +1,13 @@
+  - platform: speedtest
+    minute:
+      - 0
+      - 12
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  - platform: systemmonitor
+    resources:
+      - type: ipv4_address
+        arg: wlan0
+
