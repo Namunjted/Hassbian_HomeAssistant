@@ -23,3 +23,14 @@
       - sensor.weather_cloudiness
       - sensor.weather_pressure
       - sensor.weather_precipitation
+  location:
+    name: Location
+    entities:
+      - device_tracker.google_maps_namunjted1234gmailcom
+  time_date:
+    name: Time&Date
+    entities:
+      - sun.sun
+      - sensor.time__date
+      - sensor.time
+      - sensor.date
