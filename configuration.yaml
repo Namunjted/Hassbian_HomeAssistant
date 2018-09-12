@@ -83,5 +83,13 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_client_secret
-
  
+
+light:
+  - platform: mqtt
+    command_topic: "office/rgb1/light/switch"
+panel_iframe:
+  floorplan:
+    title: 'Floorplan'
+    url: 'http://192.168.1.8:8123/lovelace/home'
+    icon: mdi:home

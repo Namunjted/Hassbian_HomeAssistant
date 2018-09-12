@@ -1,0 +1,29 @@
+resources:
+  - url: /local/custom_ui/weather-card.js
+    type: js
+  - url: /local/custom_ui/clock-element.js
+    type: js
+  - url: /local/custom_ui/circle-sensor-card.js
+  
+title: LopHocVui_Home
+views:
+  - icon: mdi:home-assistant
+    id: home
+    # Name of the view. Will be used as the tooltip for tab icon
+    title: Home
+    # theme: darkorange
+    cards:
+      - type: picture-elements
+        # title: Main Level
+        image: /local/image/main.jpg
+        elements: 
+          - type: image
+            entity: light.mqtt_light
+            tap_action: toggle
+            state_image:
+              "on": /local/image/light1.png
+              "off": /local/image/light2.png
+            style:
+              top: 4%
+              left: 30%
+              width: 7%
