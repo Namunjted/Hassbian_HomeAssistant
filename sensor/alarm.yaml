@@ -1,0 +1,6 @@
+  - platform: template
+    sensors:
+      alarm:
+        friendly_name: 'Timer'
+        value_template: >-
+          {{ "%0.02d:%0.02d" | format(states("input_number.alarm_hour") | int, states("input_number.alarm_minute") | int) }}

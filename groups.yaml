@@ -1,3 +1,22 @@
+  alarm:
+    name: Alarm
+    entities:
+      - sensor.time
+      - input_number.alarm_hour
+      - input_number.alarm_minute
+  pc:
+    name: Computer
+    entities:
+      - switch.pc_power
+      - input_select.pc
+  fan:
+    name: Fan
+    entities:
+      - switch.fan
+      - input_boolean.fan_timer
+      - input_boolean.fan_direction
+      - input_number.fan_speed
+      - input_number.fan_natural
   network:
     name: Network
     entities:

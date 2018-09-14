@@ -71,7 +71,7 @@ weather:
   - platform: yweather
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml

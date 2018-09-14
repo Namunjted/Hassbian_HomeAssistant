@@ -20,11 +20,17 @@ imleaving:
         entity_id: media_player.living_room_2
         data:
           message: 'Hẹn gặp lại anh, yêu anh'
+fan_timer:
+    sequence:
+      - service: switch.turn_off
+        entity_id: switch.fan
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.fan_timer
 fan_speed_1:
     alias: fan_speed_1
     sequence:
       - service: switch.turn_on
-         entity_id: switch.fan_speed
+        entity_id: switch.fan_speed
 fan_speed_2:
     alias: fan_speed_2
     sequence:
@@ -36,7 +42,7 @@ fan_natural_1:
     alias: fan_natural_1
     sequence:
       - service: switch.turn_on
-         entity_id: switch.fan_natural
+        entity_id: switch.fan_natural
 fan_natural_2:
     alias: fan_natural_2
     sequence:
