@@ -1,0 +1,3 @@
+pc_shutdown: 'curl -u User:quach -k http://192.168.1.2:1110/?action=System.Shutdown'
+pc_restart: 'curl -u User:quach -k http://192.168.1.2:1110/?action=System.Restart'
+pc_sleep: 'curl -u User:quach -k http://192.168.1.2:1110/?action=System.Sleep'

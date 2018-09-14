@@ -15,14 +15,14 @@ views:
     cards:
       - type: picture-elements
         # title: Main Level
-        image: /local/image/main.jpg
+        image: /local/images/main.jpg
         elements: 
           - type: image
             entity: light.mqtt_light
             tap_action: toggle
             state_image:
-              "on": /local/image/light1.png
-              "off": /local/image/light2.png
+              "on": /local/images/light1.png
+              "off": /local/images/light2.png
             style:
               top: 4%
               left: 30%

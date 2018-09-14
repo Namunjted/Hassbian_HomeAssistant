@@ -1,0 +1,8 @@
+pc:
+  name: PC
+  options:
+   - Shutdown
+   - Restart
+   - Sleep
+  initial: Sleep
+  icon: mdi:desktop-classic

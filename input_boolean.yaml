@@ -1,0 +1,12 @@
+fan_power:
+  name: Fan power
+  initial: off
+  icon: mdi:power
+fan_direction:
+  name: Fan direction
+  initial: off
+  icon: mdi:arrow-split-vertical
+fan_timer:
+  name: Fan Timer
+  initial: off
+  icon: mdi:timer
