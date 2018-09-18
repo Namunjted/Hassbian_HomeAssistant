@@ -1,0 +1,2 @@
+ - platform: linux_battery
+   system: android

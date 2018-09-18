@@ -23,9 +23,11 @@ frontend:
 config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-#http:
+http:
 #  api_password: YOUR_SECRET_PASSWORD
- 
+   ssl_certificate: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/fullchain.pem
+   ssl_key: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/privkey.pem
+   base_url: lophocvui.duckdns.org
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -80,6 +82,10 @@ device_tracker:
   - platform: google_maps
     username: !secret google_maps_username
     password: !secret google_maps_password
+  - platform: owntracks_http
+    max_gps_accuracy: 200
+    username: admin
+    password: 25251325
 #media_player:
 #  - platform: spotify
 #    client_id: !secret spotify_client_id
@@ -92,5 +98,13 @@ light:
 panel_iframe:
   floorplan:
     title: 'Floorplan'
-    url: 'http://192.168.1.8:8123/lovelace/home'
+    url: 'https://lophocvui.duckdns.org/lovelace/home'
     icon: mdi:home
+  web_terminal:
+    title: 'Web terminal'
+    icon: mdi:console
+    url: 'https://lophocvui.duckdns.org:1997'
+  github:
+    title: 'GitHub'
+    icon: mdi:github-circle
+    url: 'https://github.com/'
