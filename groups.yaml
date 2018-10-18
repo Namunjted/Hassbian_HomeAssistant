@@ -53,3 +53,11 @@
       - sensor.time__date
       - sensor.time
       - sensor.date
+  light:
+    name: Lights
+    entities:
+      - light.the_livingroom_light
+      - light.the_kitchen_light
+      - light.the_bedroom_light
+
+

@@ -1,2 +1,17 @@
- - platform: linux_battery
-   system: android
+  - platform: linux_battery
+    system: android
+  - platform: template
+    sensors:
+      window_sensor_battery_level:
+        unit_of_measurement: '%'
+        value_template: '{{ states.input_number.window_sensor_battery.state|int }}'
+        icon_template: >
+          {% set battery_level = states.sensor.window_sensor_battery_level.state|default(0)|int %}
+          {% set battery_round = (battery_level / 10) |int * 10 %}
+          {% if battery_round >= 100 %}
+            mdi:battery
+          {% elif battery_round > 0 %}
+            mdi:battery-{{ battery_round }}
+          {% else %}
+            mdi:battery-alert
+          {% endif %}

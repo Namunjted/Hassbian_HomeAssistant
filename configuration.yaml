@@ -24,11 +24,10 @@ config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-#  api_password: YOUR_SECRET_PASSWORD
-   ssl_certificate: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/fullchain.pem
-   ssl_key: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/privkey.pem
-   base_url: lophocvui.duckdns.org
-
+   api_password: 123456
+   # ssl_certificate: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/fullchain.pem
+   # ssl_key: /home/homeassistant/dehydrated/certs/lophocvui.duckdns.org/privkey.pem
+   # base_url: lophocvui.duckdns.org
 # Checks for available updates
 # Note: This component will send some information about your system to
 # the developers to assist with development of Home Assistant.
@@ -37,7 +36,6 @@ http:
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
-
 # Discover some devices automatically
 discovery:
 
@@ -63,13 +61,18 @@ tts:
     language: 'vi'
 # Cloud
 cloud:
- 
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: ha
+  password: 123456
 # Sensor
 sensor: !include_dir_merge_list sensor/
 switch: !include_dir_merge_list switchs/
-
+light: !include_dir_merge_list lights/
 # Weather
-weather: 
+weather:
   - platform: yweather
 
 group: !include groups.yaml
@@ -84,17 +87,7 @@ device_tracker:
     password: !secret google_maps_password
   - platform: owntracks_http
     max_gps_accuracy: 200
-    username: admin
-    password: 25251325
-#media_player:
-#  - platform: spotify
-#    client_id: !secret spotify_client_id
-#    client_secret: !secret spotify_client_secret
- 
 
-light:
-  - platform: mqtt
-    command_topic: "office/rgb1/light/switch"
 panel_iframe:
   floorplan:
     title: 'Floorplan'
@@ -107,4 +100,18 @@ panel_iframe:
   github:
     title: 'GitHub'
     icon: mdi:github-circle
-    url: 'https://github.com/'
+    url: 'https://github.com'
+
+hangouts:
+  intents:
+    HomeAssistant_Team:
+      sentences:
+       - Hello! HomeAssistant Team
+      conversations:
+       - id: Ugw-28YhvKIxZkEmKZZ4AaABAagBh7TZCg
+notify:
+  - name: Google Notify
+    platform: hangouts
+    default_conversations:
+       - id: Ugw-28YhvKIxZkEmKZZ4AaABAagBh7TZCg
+

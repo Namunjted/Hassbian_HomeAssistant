@@ -1,0 +1,5 @@
+  - platform: sql
+    queries:
+      - name: Sun state
+        query: "SELECT * FROM states WHERE entity_id = 'sun.sun' ORDER BY state_id DESC LIMIT 1;"
+        column: 'state'

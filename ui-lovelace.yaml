@@ -1,29 +1,46 @@
-resources:
-  - url: /local/custom_ui/weather-card.js
-    type: js
-  - url: /local/custom_ui/clock-element.js
-    type: js
-  - url: /local/custom_ui/circle-sensor-card.js
-  
-title: LopHocVui_Home
+title: Nhà trẻ mẫu giáo
+
+# Copy resources from anywhere to www/lovelace and include them
 views:
-  - icon: mdi:home-assistant
-    id: home
-    # Name of the view. Will be used as the tooltip for tab icon
-    title: Home
-    # theme: darkorange
+  - title: Lights
+    id: lights
+    icon: mdi:home-assistant
     cards:
-      - type: picture-elements
-        # title: Main Level
-        image: /local/images/main.jpg
-        elements: 
-          - type: image
-            entity: light.mqtt_light
-            tap_action: toggle
-            state_image:
-              "on": /local/images/light1.png
-              "off": /local/images/light2.png
-            style:
-              top: 4%
-              left: 30%
-              width: 7%
+      - type: entities
+        title: Lights
+        show_header_toggle: true
+        entities:
+          - light.the_kitchen_light
+          - light.the_bedroom_light
+          - light.the_livingroom_light
+      - type: picture-glance
+        title: Living room
+        image: /local/images/the_livingroom.jpg
+        entities:
+          - sensor.weather_temperature
+          - input_select.pc
+          - light.the_livingroom_light
+  - title: Sensors
+    icon: mdi:cloud-search
+    id: sensors
+    cards:      
+      - type: map
+        entities:
+          - entity: device_tracker.google_maps_namunjted1234gmailcom
+  - title: Setting
+    id: settings
+    icon: mdi:desktop-classic
+    cards:
+      - type: entities
+        title: System Monitor
+        entities:
+          - sensor.cpu_speed
+          - sensor.memory_free
+          - sensor.memory_use_percent
+      - type: entities
+        title: Network
+        entities:
+          - sensor.ipv4_address_wlan0
+          - sensor.speedtest_download
+          - sensor.speedtest_ping
+          - sensor.speedtest_upload
