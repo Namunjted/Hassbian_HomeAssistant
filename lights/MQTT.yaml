@@ -1,0 +1,16 @@
+  - platform: mqtt
+    name: "The Bedroom Light"
+    command_topic: "light/bedroom"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt
+    name: "The Livingroom light"
+    command_topic: "light/livingroom"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt
+    name: "The kitchen light"
+    command_topic: "light/kitchen"
+    payload_on: "on"
+    payload_off: "off"
+

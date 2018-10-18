@@ -4,7 +4,8 @@
 !.gitignore
 !sensor
 !www
-*www/images
+!switchs
+!lights
 secrets.yaml
 home-assistant.log
 home-assistant_v2.db
