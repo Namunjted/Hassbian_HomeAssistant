@@ -6,6 +6,50 @@ views:
     id: lights
     icon: mdi:home-assistant
     cards:
+      - type: markdown
+        content: >
+          ## Welcome Home
+
+          Số nhà 123 
+          Phố Nguyễn Văn Trỗi
+          Quận Hà Đông 
+          Thành phố Hà Nội
+      - type: picture-elements
+        image: /local/main.png
+        elements:
+          - type: state-icon
+            tap_action: toggle
+            entity: light.the_bedroom_light
+            style:
+              bottom: 17%
+              left: 46%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.the_livingroom_light
+            style:
+              bottom: 38%
+              left: 35%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.the_kitchen_light
+            style:
+              top: 56%
+              left: 62%
+          - type: state-label
+            entity: sensor.weather_temperature
+            prefix: Temperature =     
+            style:
+              top: 3%
+              left: 80%
+              color: red
+          - type: state-label
+            entity: sensor.weather_humidity
+            prefix: Humidity =
+            style:
+              top: 6%
+              left: 80%
+              color: red
+
       - type: entities
         title: Lights
         show_header_toggle: true
@@ -21,12 +65,27 @@ views:
           - input_select.pc
           - light.the_livingroom_light
   - title: Sensors
-    icon: mdi:cloud-search
+    icon: mdi:weather-partlycloudy
     id: sensors
-    cards:      
-      - type: map
+    cards:
+      - type: weather-forecast
+        entity: weather.yweather       
+      - type: glance
+        title: Thời tiết hôm nay 
         entities:
-          - entity: device_tracker.google_maps_namunjted1234gmailcom
+          - entity: sensor.weather_symbol
+            name: Dự Báo
+          - entity: sensor.weather_temperature
+            name: Nhiệt độ
+          - entity: sensor.weather_humidity
+            name: Độ ẩm
+          - entity: sensor.weather_wind_speed
+            name: Tốc độ gió
+          - entity: sensor.weather_cloudiness
+            name: Mây
+          - entity: sensor.weather_precipitation
+            name: Lượng mưa
+   
   - title: Setting
     id: settings
     icon: mdi:desktop-classic
@@ -37,6 +96,10 @@ views:
           - sensor.cpu_speed
           - sensor.memory_free
           - sensor.memory_use_percent
+      - type: gauge
+        title: Memory Usuage
+        unit_of_measurement: '%'
+        entity: sensor.memory_use_percent
       - type: entities
         title: Network
         entities:
@@ -44,3 +107,7 @@ views:
           - sensor.speedtest_download
           - sensor.speedtest_ping
           - sensor.speedtest_upload
+ 
+  - title: Remote
+    type: picture-elements    
+    image: /local/rect4.png

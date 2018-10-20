@@ -64,13 +64,15 @@ cloud:
 
 mqtt:
   broker: 127.0.0.1
-  port: 1883
-  username: ha
+  port: 1808
+  username: HA
   password: 123456
 # Sensor
 sensor: !include_dir_merge_list sensor/
+binary_sensor: !include_dir_merge_list binary_sensor/
 switch: !include_dir_merge_list switchs/
 light: !include_dir_merge_list lights/
+cover: !include_dir_merge_list cover/
 # Weather
 weather:
   - platform: yweather
@@ -96,11 +98,7 @@ panel_iframe:
   web_terminal:
     title: 'Web terminal'
     icon: mdi:console
-    url: 'https://lophocvui.duckdns.org:1997'
-  github:
-    title: 'GitHub'
-    icon: mdi:github-circle
-    url: 'https://github.com'
+    url: 'http://127.0.0.1:4200'
 
 hangouts:
   intents:
@@ -114,4 +112,8 @@ notify:
     platform: hangouts
     default_conversations:
        - id: Ugw-28YhvKIxZkEmKZZ4AaABAagBh7TZCg
+
+camera:
+  - platform: ffmpeg
+    input: /dev/video0
 

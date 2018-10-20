@@ -59,5 +59,9 @@
       - light.the_livingroom_light
       - light.the_kitchen_light
       - light.the_bedroom_light
-
+  door:
+    name: Doors
+    entities:
+      - cover.garage_door
+      - binary_sensor.garage_door
 
