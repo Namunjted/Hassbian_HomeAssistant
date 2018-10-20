@@ -1,0 +1,6 @@
+  - platform: mqtt
+    name: "Garage_door"
+    state_topic: "garage-door"
+    payload_on: "open"
+    payload_off: "closed"
+    device_class: garage_door
