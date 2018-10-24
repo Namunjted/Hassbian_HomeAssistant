@@ -1,8 +1,0 @@
-  - platform: mqtt
-    name: "Curtain"
-    state_topic: "bedroom-curtain"
-    command_topic: "bedroom-curtain"
-    qos: 0
-    payload_on: "open"
-    payload_off: "closed"
-

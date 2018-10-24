@@ -5,8 +5,27 @@
     payload_open: "open"
     payload_close: "closed"
     payload_stop: "stop"
-    state_open: "OPENED"
-    state_closed: "CLOSED"
+    state_open: "open"
+    state_closed: "closed"
+    state_stop: "stop"
+    payload_not_available: "offline"
+    payload_available: "online"
     optimistic: false
-    retain: false
+    retain: true
     value_template: '{{ value }}'
+  - platform: mqtt
+    name: Livingroom_door
+    state_topic: "livingroom-door"
+    command_topic: "livingroom-door"
+    payload_open: "open"
+    payload_close: "closed"
+    payload_stop: "stop"
+    state_open: "open"
+    state_closed: "closed"
+    state_stop: "stop"
+    payload_not_available: "offline"
+    payload_available: "online"
+    optimistic: false
+    retain: true
+    value_template: '{{ value }}'
+

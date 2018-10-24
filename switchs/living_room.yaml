@@ -1,7 +1,0 @@
-  - platform: mqtt
-    name: "Main Door"
-    state_topic: "livingroom-door"
-    command_topic: "livingroom-door"
-    payload_on: "open"
-    payload_off: "closed"
-

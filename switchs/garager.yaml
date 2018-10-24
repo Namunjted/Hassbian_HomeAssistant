@@ -1,8 +1,0 @@
-  - platform: mqtt
-    name: "Garage Door"
-    state_topic: "garage-door"
-    command_topic: "garage-door"
-    qos: 0
-    payload_on: "open"
-    payload_off: "closed"
-

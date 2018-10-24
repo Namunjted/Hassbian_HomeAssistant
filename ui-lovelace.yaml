@@ -15,7 +15,7 @@ views:
           Quận Hà Đông 
           Thành phố Hà Nội
       - type: picture-elements
-        image: /local/main.png
+        image: /local/myhome.png
         elements:
           - type: state-icon
             tap_action: toggle
@@ -85,7 +85,23 @@ views:
             name: Mây
           - entity: sensor.weather_precipitation
             name: Lượng mưa
-   
+  - title: Doors
+    id: doors
+    icon: mdi:home
+    cards:
+      - type: entities
+        title: Garage door
+        entities:
+          - cover.garage_door
+          - binary_sensor.garage_door
+      - type: picture-glance
+        title: Cửa Gara
+        entities: 
+          - switch.garage_door
+        state_image:
+          "on": /local/images/doors/garage_on.jpg
+          "off": /local/images/doors/garage_off.jpg
+        entity: switch.garage_door
   - title: Setting
     id: settings
     icon: mdi:desktop-classic
@@ -108,6 +124,3 @@ views:
           - sensor.speedtest_ping
           - sensor.speedtest_upload
  
-  - title: Remote
-    type: picture-elements    
-    image: /local/rect4.png
