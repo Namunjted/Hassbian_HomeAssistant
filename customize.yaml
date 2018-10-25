@@ -1,1 +1,33 @@
-
+sensor.time__date:
+  friendly_name: Time & Date
+  entity_picture: /local/icons/Time&Date.png
+sun.sun:
+  friendly_name: Sun
+  entity_picture: /local/icons/Time_and_Date/sun.png
+sensor.time:
+  friendly_name: Time        
+  entity_picture: /local/icons/Time_and_Date/time.png
+sensor.date:
+  friendly_name: Date
+  entity_picture: /local/icons/Time_and_Date/date.png
+##################################################
+sensor.weather_symbol:
+  entity_picture: /local/icons/Weather/sun.png
+sensor.moon:
+  entity_picture: /local/icons/Weather/moon.png
+sensor.weather_temperature:
+  entity_picture: /local/icons/Weather/temperature.png
+sensor.weather_humidity:
+  entity_picture: /local/icons/Weather/humidity.png
+sensor.weather_fog:
+  entity_picture: /local/icons/Weather/fog.png
+sensor.weather_cloudiness:
+  entity_picture: /local/icons/Weather/cloud.png
+sensor.weather_precipitation:
+  entity_picture: /local/icons/Weather/rain.png
+sensor.weather_pressure:
+  entity_picture: /local/icons/Weather/apsuat.png
+sensor.weather_wind_speed:
+  entity_picture: /local/icons/Weather/windSpeed.png
+switch.pc_power:
+  entity_picture: /local/icons/pc.png

@@ -93,7 +93,7 @@ device_tracker:
 panel_iframe:
   floorplan:
     title: 'Floorplan'
-    url: 'https://lophocvui.duckdns.org/lovelace/home'
+    url:  'http://192.168.0.100:8123/lovelace/lights'
     icon: mdi:home
   web_terminal:
     title: 'Web terminal'

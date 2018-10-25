@@ -1,69 +1,25 @@
 title: Nhà trẻ mẫu giáo
-
+resources:
+  - url: /local/custom_ui/plan-coordinates.js
+    type: js
 # Copy resources from anywhere to www/lovelace and include them
 views:
   - title: Lights
     id: lights
     icon: mdi:home-assistant
     cards:
-      - type: markdown
-        content: >
-          ## Welcome Home
-
-          Số nhà 123 
-          Phố Nguyễn Văn Trỗi
-          Quận Hà Đông 
-          Thành phố Hà Nội
-      - type: picture-elements
-        image: /local/myhome.png
-        elements:
-          - type: state-icon
-            tap_action: toggle
-            entity: light.the_bedroom_light
-            style:
-              bottom: 17%
-              left: 46%
-          - type: state-icon
-            tap_action: toggle
-            entity: light.the_livingroom_light
-            style:
-              bottom: 38%
-              left: 35%
-          - type: state-icon
-            tap_action: toggle
-            entity: light.the_kitchen_light
-            style:
-              top: 56%
-              left: 62%
-          - type: state-label
-            entity: sensor.weather_temperature
-            prefix: Temperature =     
-            style:
-              top: 3%
-              left: 80%
-              color: red
-          - type: state-label
-            entity: sensor.weather_humidity
-            prefix: Humidity =
-            style:
-              top: 6%
-              left: 80%
-              color: red
-
-      - type: entities
-        title: Lights
-        show_header_toggle: true
-        entities:
-          - light.the_kitchen_light
-          - light.the_bedroom_light
-          - light.the_livingroom_light
-      - type: picture-glance
-        title: Living room
-        image: /local/images/the_livingroom.jpg
-        entities:
-          - sensor.weather_temperature
-          - input_select.pc
-          - light.the_livingroom_light
+      - type: vertical-stack
+        cards: 
+          - type: custom:plan-coordinates                    
+          - type: picture-elements
+            image: /local/myhome.png
+            elements:
+              - type: state-icon
+                entity: switch.lamp
+                tap_action: toggle
+                style:
+                  top: 60%
+                  left: 67%
   - title: Sensors
     icon: mdi:weather-partlycloudy
     id: sensors
@@ -102,8 +58,8 @@ views:
           "on": /local/images/doors/garage_on.jpg
           "off": /local/images/doors/garage_off.jpg
         entity: switch.garage_door
-  - title: Setting
-    id: settings
+  - title: Systemd
+    id: systemd
     icon: mdi:desktop-classic
     cards:
       - type: entities
@@ -123,4 +79,11 @@ views:
           - sensor.speedtest_download
           - sensor.speedtest_ping
           - sensor.speedtest_upload
- 
+  - title: Setting
+    id: settings
+    icon: mdi:home
+    cards:
+      - type: markdown
+        content: >
+          `Hello`
+           \ Tables        \ Are           \ Cool  \
