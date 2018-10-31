@@ -31,3 +31,16 @@ sensor.weather_wind_speed:
   entity_picture: /local/icons/Weather/windSpeed.png
 switch.pc_power:
   entity_picture: /local/icons/pc.png
+switch.lamp:
+  icon: mdi:lamp
+switch.light_bathroom:
+  icon: mdi:lightbulb
+switch.light_bedroom:
+  icon: mdi:lightbulb
+switch.light_garage:
+  icon: mdi:lightbulb
+switch.light_kitchen:
+  icon: mdi:lightbulb
+switch.light_livingroom:
+  icon: mdi:lightbulb
+

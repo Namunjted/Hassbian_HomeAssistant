@@ -116,4 +116,5 @@ notify:
 camera:
   - platform: ffmpeg
     input: /dev/video0
-
+ifttt:
+  key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK
