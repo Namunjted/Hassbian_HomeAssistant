@@ -1,8 +1,7 @@
-
-google_maps_namunjted1234gmailcom:
+  google_maps_namunjted1234gmailcom:
   hide_if_away: false
-  icon:
-  mac:
+  icon: mdi:home
+  mac: e4:f8:ef:4f:31:ef
   name: google maps namunjted1234gmailcom
   picture:
   track: true

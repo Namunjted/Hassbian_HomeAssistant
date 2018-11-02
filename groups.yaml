@@ -12,7 +12,9 @@
   fan:
     name: Fan
     entities:
-      - switch.fan
+      - switch.fan_1
+      - switch.fan_kitchen
+      - switch.fan_bedroom
       - input_boolean.fan_timer
       - input_boolean.fan_direction
       - input_number.fan_speed
@@ -56,17 +58,22 @@
   light:
     name: Lights
     entities:
-      - light.the_livingroom_light
-      - light.the_kitchen_light
-      - light.the_bedroom_light
+      - switch.light_livingroom
+      - switch.light_bedroom
+      - switch.light_kitchen
+      - switch.light_garage
+      - switch.light_bathroom
+      - switch.lamp
+      - switch.lamp_1
   door1:
     name: Garage_Doors
     entities:
       - cover.garage_door
-      - binary_sensor.garage_door
   door2:
     name: Livingroom_Doors
     entities:
       - cover.livingroom_door
-      - binary_sensor.livingroom_door
-
+  window:
+    name: Bedroom_Window
+    entities:
+      - cover.bedroom_window

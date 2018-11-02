@@ -24,6 +24,18 @@ views:
                 style:
                   top: 95%
                   left: 24%
+              - type: state-icon
+                entity: switch.fan_bedroom
+                tap_action: toggle
+                style:
+                  top: 56%
+                  left: 19%
+              - type: state-icon
+                entity: switch.fan_kitchen
+                tap_action: toggle
+                style:
+                  top: 7%
+                  left: 55%
               - type: state-label
                 entity: sensor.date
                 style:
@@ -55,7 +67,7 @@ views:
                 tap_action: toggle
                 style:
                   top: 73%
-                  left: 32%
+                  left: 31%
               - type: state-icon
                 entity: switch.light_garage
                 tap_action: toggle
@@ -67,13 +79,60 @@ views:
                 tap_action: toggle
                 style:
                   top: 28%
-                  left: 64%
+                  left: 63%
               - type: state-icon
                 entity: switch.light_livingroom
                 tap_action: toggle
                 style:
-                  top: 52%
-                  left: 22%
+                  top: 51%
+                  left: 20%
+              - type: state-badge
+                entity: switch.light_livingroom
+                style:
+                  top: 71%
+                  left: 20%
+              - type: image
+                entity: group.door1
+                tap_action: more-info
+                image: /local/images/doors/garage.jpg
+                style:
+                  top: 84%
+                  left: 64%
+                  width: 50px
+                  height: 50px
+                  background: blue
+                  -moz-border-radius: 25px
+                  -webkit-border-radius: 25px
+                  border-radius: 25px
+                  border: none
+              - type: image
+                entity: group.door2
+                tap_action: more-info
+                image: /local/images/doors/living.jpg
+                style:
+                  top: 28%
+                  left: 3%
+                  width: 50px
+                  height: 50px
+                  background: red
+                  -moz-border-radius: 25px
+                  -webkit-border-radius: 25px
+                  border-radius: 25px
+                  border: none
+              - type: image
+                entity: group.window
+                tap_action: more-info
+                image: /local/images/doors/window.jpg
+                style: 
+                  top: 78%
+                  left: 3%
+                  width: 50px
+                  height: 50px
+                  background: yellow
+                  -moz-border-radius: 25px
+                  -webkit-border-radius: 25px
+                  border-radius: 25px
+                  border: none  
   - title: Sensors
     icon: mdi:weather-partlycloudy
     id: sensors

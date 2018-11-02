@@ -60,7 +60,7 @@ tts:
   - platform: google
     language: 'vi'
 # Cloud
-cloud: !include_dir_merge_list cloud/
+cloud: !include cloud.yaml
 
 mqtt:
   broker: 127.0.0.1
@@ -87,9 +87,8 @@ device_tracker:
   - platform: google_maps
     username: !secret google_maps_username
     password: !secret google_maps_password
-  - platform: owntracks_http
+  - platform: owntracks
     max_gps_accuracy: 200
-
 panel_iframe:
   floorplan:
     title: 'Floorplan'
@@ -118,3 +117,9 @@ camera:
     input: /dev/video0
 ifttt:
   key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK
+history_graph:
+  gr1:
+    name: Tem-Hum
+    entities:
+      - sensor.temperature
+      - sensor.humidity

@@ -13,6 +13,7 @@
     optimistic: false
     retain: true
     value_template: '{{ value }}'
+
   - platform: mqtt
     name: Livingroom_door
     state_topic: "livingroom-door"
@@ -29,3 +30,18 @@
     retain: true
     value_template: '{{ value }}'
 
+  - platform: mqtt
+    name: Bedroom_window
+    state_topic: "bedroom-window"
+    command_topic: "bedroom-window"
+    payload_open: "open"
+    payload_close: "closed"
+    payload_stop: "stop"
+    state_open: "open"
+    state_closed: "closed"
+    state_stop: "stop"
+    payload_not_available: "offline"
+    payload_available: "online"
+    optimistic: false
+    retain: true
+    value_template: '{{ value }}'

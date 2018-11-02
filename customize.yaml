@@ -32,15 +32,23 @@ sensor.weather_wind_speed:
 switch.pc_power:
   entity_picture: /local/icons/pc.png
 switch.lamp:
-  icon: mdi:lamp
+  icon: mdi:desk-lamp
 switch.light_bathroom:
   icon: mdi:lightbulb
 switch.light_bedroom:
-  icon: mdi:lightbulb
+  icon: mdi:lamp
 switch.light_garage:
-  icon: mdi:lightbulb
+  icon: mdi:lightbulb-on
 switch.light_kitchen:
-  icon: mdi:lightbulb
+  icon: mdi:track-light
 switch.light_livingroom:
-  icon: mdi:lightbulb
-
+  icon: mdi:ceiling-light
+switch.fan_kitchen:
+  icon: mdi:fan
+switch.fan_bedroom:
+  icon: mdi:fan
+#############################
+switch.fan_1:
+  icon: >
+    if (state === 'on') return 'mdi:fan';
+    return 'mdi:television-classic-off';

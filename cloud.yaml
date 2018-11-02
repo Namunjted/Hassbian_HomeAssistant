@@ -1,0 +1,28 @@
+  alexa:
+    filter:
+      include_domains:
+        - switch
+        - group
+    entity_config:
+      switch.lamp_1:
+        name: Lamp 1
+        description: lamp 1
+        display_categories: LIGHT
+      switch.fan_1: 
+        name: Fan 1
+        description: fan 1
+        display_categories: FAN
+      switch.light_bathroom:
+        display_categories: LIGHT
+      switch.light_livingroom:
+        display_categories: LIGHT
+      switch.lamp:
+        display_categories: LIGHT
+      switch.light_kitchen:
+        display_categories: LIGHT
+      switch.light_bedroom:
+        display_categories: LIGHT
+      switch.light_garage:
+        display_categories: LIGHT
+      switch.fan_bedroom:
+        display_categories: FAN
