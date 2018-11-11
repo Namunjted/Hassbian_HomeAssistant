@@ -1,4 +1,4 @@
-title: Nhà trẻ mẫu giáo
+title: HomeAssistant
 resources:
   - url: /local/custom_ui/plan-coordinates.js
     type: js
@@ -133,6 +133,7 @@ views:
                   -webkit-border-radius: 25px
                   border-radius: 25px
                   border: none  
+        
   - title: Sensors
     icon: mdi:weather-partlycloudy
     id: sensors

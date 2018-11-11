@@ -1,3 +1,27 @@
+opengarage:
+    sequence:
+      - service: cover.open_cover
+        entity_id: cover.garage_door 
+openwindow:
+    sequence:
+      - service: cover.open_cover
+        entity_id: cover.bedroom_window
+openliving:
+    sequence:
+      - service: cover.open_cover
+        entity_id: cover.livingroom_door
+closegarage:
+    sequence:
+      - service: cover.close_cover
+        entity_id: cover.garage_door
+closewindow:
+    sequence:
+      - service: cover.close_cover
+        entity_id: cover.bedroom_window
+closeliving:
+    sequence:
+      - service: cover.close_cover
+        entity_id: cover.livingroom_door
 imhome:
     sequence:
       - service: switch.turn_on

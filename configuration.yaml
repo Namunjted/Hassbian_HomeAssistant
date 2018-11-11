@@ -17,8 +17,8 @@ homeassistant:
 introduction:
 
 # Enables the frontend
-frontend:
-
+frontend: !include_dir_merge_list frontend/
+ 
 # Enables configuration UI
 config:
 
@@ -92,34 +92,29 @@ device_tracker:
 panel_iframe:
   floorplan:
     title: 'Floorplan'
-    url:  'http://192.168.0.100:8123/lovelace/lights'
+    url:  'http://hassbian.local:8123/lovelace/lights'
     icon: mdi:home
   web_terminal:
     title: 'Web terminal'
     icon: mdi:console
-    url: 'http://127.0.0.1:4200'
-
-hangouts:
-  intents:
-    HomeAssistant_Team:
-      sentences:
-       - Hello! HomeAssistant Team
-      conversations:
-       - id: Ugw-28YhvKIxZkEmKZZ4AaABAagBh7TZCg
-notify:
-  - name: Google Notify
-    platform: hangouts
-    default_conversations:
-       - id: Ugw-28YhvKIxZkEmKZZ4AaABAagBh7TZCg
+    url: 'http://hassbian.local:4200/'
 
 camera:
-  - platform: ffmpeg
-    input: /dev/video0
+#  - platform: ffmpeg
+#    input: /dev/video0
+#    extra_arguments: -pred 1
+  - platform: local_file
+    file_path: /home/homeassistant/.homeassistant/www/dlib/1234.jpg
+
 ifttt:
-  key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK
-history_graph:
-  gr1:
-    name: Tem-Hum
-    entities:
-      - sensor.temperature
-      - sensor.humidity
+  key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK 
+
+image_processing:
+  - platform: dlib_face_detect
+    source:
+     - entity_id: camera.ffmpeg
+  - platform: dlib_face_identify
+    source:
+     - entity_id: camera.ffmpeg
+    faces:
+      Jon: /home/homeassistant/.homeassistant/www/dlib/qqqq.png

@@ -77,3 +77,4 @@
     name: Bedroom_Window
     entities:
       - cover.bedroom_window
+

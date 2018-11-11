@@ -3,6 +3,11 @@
       include_domains:
         - switch
         - group
+        - script
+        - sensor
+      include_entities:
+        - sensor.temperature
+        - sensor.humidity
     entity_config:
       switch.lamp_1:
         name: Lamp 1
