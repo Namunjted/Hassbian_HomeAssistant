@@ -17,7 +17,7 @@ homeassistant:
 introduction:
 
 # Enables the frontend
-frontend: !include_dir_merge_list frontend/
+frontend: !include frontend.yaml
  
 # Enables configuration UI
 config:
@@ -104,7 +104,7 @@ camera:
 #    input: /dev/video0
 #    extra_arguments: -pred 1
   - platform: local_file
-    file_path: /home/homeassistant/.homeassistant/www/dlib/1234.jpg
+    file_path: /home/homeassistant/.homeassistant/www/dlib/nam.jpg
 
 ifttt:
   key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK 
@@ -112,9 +112,9 @@ ifttt:
 image_processing:
   - platform: dlib_face_detect
     source:
-     - entity_id: camera.ffmpeg
+     - entity_id: camera.local_file
   - platform: dlib_face_identify
     source:
-     - entity_id: camera.ffmpeg
+     - entity_id: camera.local_file
     faces:
-      Jon: /home/homeassistant/.homeassistant/www/dlib/qqqq.png
+      Nam: /home/homeassistant/.homeassistant/www/dlib/Nam.jpg
