@@ -1,3 +1,25 @@
+  default_view:
+    view: true
+    icon: mdi:home
+    entities:
+      - group.alarm
+      - group.all_covers
+      - group.all_locks
+      - group.all_switches
+      - group.calendar
+      - group.door1
+      - group.door2
+      - group.fan
+      - group.light
+      - group.location
+      - group.network
+      - group.pc
+      - group.systemd
+      - group.time_date
+      - group.weather
+      - image_processing.sevensegment_ocr_seven_segments
+      - group.window
+      - lock.frontdoor
   alarm:
     name: Alarm
     entities:
@@ -77,4 +99,69 @@
     name: Bedroom_Window
     entities:
       - cover.bedroom_window
-
+  openclose:
+    name: Open Closed Auto
+    entities:
+      - automation.bedroom_window
+      - automation.closed_door
+      - automation.closed_garage
+      - automation.garage_door
+      - automation.main_door
+      - automation.open_door
+      - automation.open_garage
+      - automation.open_window
+  pcauto:
+    name: PC Auto
+    entities:
+      - automation.pc_restart
+      - automation.pc_shutdown
+      - automation.pc_sleep
+      - automation.startup_hass
+      - automation.timer
+  fanauto:
+    name: Fan Auto
+    entities:
+      - automation.fan_change_natural
+      - automation.fan_change_speed
+      - automation.fan_direction_off
+      - automation.fan_direction_on
+      - automation.fan_power_off
+      - automation.fan_power_on
+      - automation.fan_timer
+      - automation.garage_light_auto
+  automation:
+    name: Automation
+    view: yes
+    entities:
+      - group.openclose
+      - group.pcauto
+      - group.fanauto
+  srchome:
+    name: Script Home
+    entities:
+      - script.imhome
+      - script.imleaving
+  srcOpenclose:
+    name: Script Open Close
+    entities:
+      - script.closegarage
+      - script.closeliving
+      - script.closewindow
+      - script.opengarage
+      - script.openliving
+      - script.openwindow
+  srcfan:
+    name: Script Fan
+    entities:
+      - script.fan_natural_1
+      - script.fan_natural_2
+      - script.fan_speed_1
+      - script.fan_speed_2
+      - script.fan_timer
+  Scripts:
+    name: Scripts
+    view: yes
+    entities:
+      - group.srchome
+      - group.srcopenclose
+      - group.srcfan

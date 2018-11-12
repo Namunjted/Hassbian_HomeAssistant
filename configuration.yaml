@@ -44,12 +44,22 @@ conversation:
 
 # Enables support for tracking state changes over time
 history:
-
+  include:
+    domains:
+      - sensor
+      - switch
+  exclude:
+    entities:
+     - switch.fan_1
+history_graph: !include history_graph.yaml
 # View all events in a logbook
 logbook:
 
 # Enables a map showing the location of tracked devices
 map:
+
+#Zone
+zone: !include zone.yaml
 
 # Track the sun
 sun:
@@ -83,17 +93,18 @@ script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
-device_tracker:
-  - platform: google_maps
-    username: !secret google_maps_username
-    password: !secret google_maps_password
-  - platform: owntracks
-    max_gps_accuracy: 200
+#device_tracker:
+#  - platform: google_maps
+#    username: !secret google_maps_username
+#    password: !secret google_maps_password
+google:
+  client_id: !secret google_id
+  client_secret: !secret google_secret
 panel_iframe:
-  floorplan:
-    title: 'Floorplan'
-    url:  'http://hassbian.local:8123/lovelace/lights'
-    icon: mdi:home
+  cloud9:
+    title: 'Cloud9'
+    url:  'http://hassbian.local:8181'
+    icon: mdi:cloud-tags
   web_terminal:
     title: 'Web terminal'
     icon: mdi:console
@@ -108,13 +119,11 @@ camera:
 
 ifttt:
   key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK 
+lock:
+  - platform: mqtt
+    name: Frontdoor
+    state_topic: "home-assistant/frontdoor/set"
+    command_topic: "home-assistant/frontdoor/set"
+    payload_lock: "LOCK"
+    payload_unlock: "UNLOCK"
 
-image_processing:
-  - platform: dlib_face_detect
-    source:
-     - entity_id: camera.local_file
-  - platform: dlib_face_identify
-    source:
-     - entity_id: camera.local_file
-    faces:
-      Nam: /home/homeassistant/.homeassistant/www/dlib/Nam.jpg

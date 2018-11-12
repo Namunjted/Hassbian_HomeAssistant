@@ -1,0 +1,18 @@
+  - name: School
+    latitude: 20.980806
+    longitude: 105.787812
+    radius: 30
+    icon: mdi:school
+
+  - name: Work
+    latitude: 20.978515
+    longitude: 105.785157
+    radius: 20
+    icon: mdi:briefcase
+
+  # This will override the default home zone
+  - name: Home
+    latitude: 20.981600
+    longitude: 105.785569
+    radius: 15
+    icon: mdi:home-circle

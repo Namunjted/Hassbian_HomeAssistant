@@ -1,0 +1,22 @@
+
+- cal_id: namunjted1234@gmail.com
+  entities:
+  - device_id: namunjted1234gmailcom
+    ignore_availability: true
+    name: My calendar
+    track: true
+
+
+- cal_id: vi.vietnamese#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: ngay_le_o_viet_nam
+    ignore_availability: true
+    name: "Ng\xE0y l\u1EC5 \u1EDF Vi\u1EC7t Nam"
+    track: true
+
+- cal_id: '#contacts@group.v.calendar.google.com'
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: true

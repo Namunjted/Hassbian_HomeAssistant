@@ -1,0 +1,13 @@
+  gr1:
+    name: Humidity
+    entities:
+      - sensor.humidity
+    hours_to_show: 240
+    refresh: 60
+  gr2:
+    name: Temperature
+    entities:
+      - sensor.temperature
+    hours_to_show: 240
+    refresh: 60
+

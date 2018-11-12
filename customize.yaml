@@ -52,3 +52,6 @@ switch.fan_1:
   icon: >
     if (state === 'on') return 'mdi:fan';
     return 'mdi:television-classic-off';
+#############################
+group.all_automations:
+  hidden: false
