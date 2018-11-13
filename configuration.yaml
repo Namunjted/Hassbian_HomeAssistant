@@ -67,8 +67,6 @@ sun:
 # Weather prediction
 # Text to speech
 tts:
-  - platform: google
-    language: 'vi'
 # Cloud
 cloud: !include cloud.yaml
 
@@ -100,6 +98,7 @@ input_select: !include input_select.yaml
 google:
   client_id: !secret google_id
   client_secret: !secret google_secret
+
 panel_iframe:
   cloud9:
     title: 'Cloud9'
@@ -119,11 +118,9 @@ camera:
 
 ifttt:
   key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK 
-lock:
-  - platform: mqtt
-    name: Frontdoor
-    state_topic: "home-assistant/frontdoor/set"
-    command_topic: "home-assistant/frontdoor/set"
-    payload_lock: "LOCK"
-    payload_unlock: "UNLOCK"
 
+media_player:
+  - platform: alexa
+    email: "khanh1997777@gmail.com"
+    password: "Huyenkhanh"
+    url: "amazon.com"

@@ -5,6 +5,7 @@
         - group
         - script
         - sensor
+        - light
       include_entities:
         - sensor.temperature
         - sensor.humidity
@@ -13,7 +14,7 @@
         name: Lamp 1
         description: lamp 1
         display_categories: LIGHT
-      switch.fan_1: 
+      switch.fan_1:
         name: Fan 1
         description: fan 1
         display_categories: FAN
@@ -31,3 +32,5 @@
         display_categories: LIGHT
       switch.fan_bedroom:
         display_categories: FAN
+
+

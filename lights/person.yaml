@@ -1,0 +1,8 @@
+  - platform: mqtt
+    name: "Person"
+    state_topic: "person/status"
+    command_topic: "person/status"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+

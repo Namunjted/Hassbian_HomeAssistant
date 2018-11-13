@@ -2,6 +2,8 @@
     view: true
     icon: mdi:home
     entities:
+      - script.test1
+      - script.test
       - group.alarm
       - group.all_covers
       - group.all_locks
@@ -17,9 +19,7 @@
       - group.systemd
       - group.time_date
       - group.weather
-      - image_processing.sevensegment_ocr_seven_segments
       - group.window
-      - lock.frontdoor
   alarm:
     name: Alarm
     entities:
@@ -35,8 +35,8 @@
     name: Fan
     entities:
       - switch.fan_1
-      - switch.fan_kitchen
-      - switch.fan_bedroom
+      - switch.kitchen_fan
+      - switch.bedroom_fan
       - input_boolean.fan_timer
       - input_boolean.fan_direction
       - input_number.fan_speed
@@ -50,12 +50,14 @@
       - sensor.speedtest_ping
   systemd:
     name: Systemd
+    view: yes
     entities:
       - sensor.cpu_speed
       - sensor.memory_free
       - sensor.memory_use_percent
   weather:
     name: Weather
+    view: yes
     entities:
       - sensor.weather_symbol
       - sensor.moon
@@ -80,13 +82,16 @@
   light:
     name: Lights
     entities:
-      - switch.light_livingroom
-      - switch.light_bedroom
-      - switch.light_kitchen
-      - switch.light_garage
-      - switch.light_bathroom
+      - switch.livingroom_light
+      - switch.bedroom_light
+      - switch.kitchen_light
+      - switch.garage_light
+      - switch.bathroom_light
       - switch.lamp
       - switch.lamp_1
+      - switch.open
+      - switch.close
+      - switch.stop
   door1:
     name: Garage_Doors
     entities:
@@ -165,3 +170,18 @@
       - group.srchome
       - group.srcopenclose
       - group.srcfan
+  Opencv:
+    name: OpenCv
+    view: yes
+    icon: mdi:cctv
+    entities:
+      - light.detector
+      - light.person
+      - light.guest
+      - camera.local_file
+      - automation.rainy_day
+      - automation.detertor
+      - binary_sensor.input
+      - sensor.doorbel1
+
+

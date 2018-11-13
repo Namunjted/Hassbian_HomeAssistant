@@ -33,19 +33,19 @@ switch.pc_power:
   entity_picture: /local/icons/pc.png
 switch.lamp:
   icon: mdi:desk-lamp
-switch.light_bathroom:
+switch.bathroom_light:
   icon: mdi:lightbulb
-switch.light_bedroom:
+switch.bedroom_light:
   icon: mdi:lamp
-switch.light_garage:
+switch.garage_light:
   icon: mdi:lightbulb-on
-switch.light_kitchen:
+switch.kitchen_light:
   icon: mdi:track-light
-switch.light_livingroom:
+switch.livingroom_light:
   icon: mdi:ceiling-light
-switch.fan_kitchen:
+switch.kitchen_fan:
   icon: mdi:fan
-switch.fan_bedroom:
+switch.bedroom_fan:
   icon: mdi:fan
 #############################
 switch.fan_1:

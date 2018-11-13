@@ -1,0 +1,10 @@
+  - platform: mqtt
+    name: "detector"
+    state_topic: "detector/status"
+    command_topic: "detector/status"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+
+
+

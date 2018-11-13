@@ -22,6 +22,18 @@ closeliving:
     sequence:
       - service: cover.close_cover
         entity_id: cover.livingroom_door
+temperature:
+    sequence:
+      - service: media_player.alexa_tts
+        entity_id: media_player.khanhs_echo_dot
+        data_template:
+          message: 'The temperature is {{ states.sensor.weather_temperature.state }}'
+welcome: 
+    sequence:
+      - service: media_player.alexa_tts
+        entity_id: media_player.khanhs_echo_dot
+        data:
+          message: 'Welcome Home'
 imhome:
     sequence:
       - service: switch.turn_on

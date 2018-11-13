@@ -1,11 +1,15 @@
   - platform: rpi_gpio
     ports:
-      11: Light Bedroom
+      11: Bedroom Light
       9: Lamp      
-      5: Light Kitchen
-      10: Fan bedroom
-      27: Light Garage
-      22: Fan Kitchen
-      17: Light Livingroom
-      4: Light Bathroom
+      5: Kitchen Light
+      10: Bedroom Fan
+      27: Garage Light
+      22: Kitchen Fan
+      17: Livingroom Light
+      4: Bathroom Light
+###################
+      13: open
+      21: close
+      26: stop
     invert_logic: 1

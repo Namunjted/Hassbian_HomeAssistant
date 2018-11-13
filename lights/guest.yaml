@@ -1,0 +1,10 @@
+  - platform: mqtt
+    name: "Guest"
+    state_topic: "guest/status"
+    command_topic: "guest/status"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+
+
+

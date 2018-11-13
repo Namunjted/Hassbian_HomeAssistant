@@ -7,6 +7,13 @@ resources:
 
 # Copy resources from anywhere to www/lovelace and include them
 views:
+  - type: alarm-panel
+    entity: alarm_control_panel.alarm
+    states:
+      - arm_home
+      - arm_away
+      - arm_night
+      - armed_custom_bypas
   - title: Lights
     id: lights
     icon: mdi:home-assistant

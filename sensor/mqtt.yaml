@@ -16,4 +16,8 @@
     name: "LDR"
     state_topic: "sensor/ldr"
     qos: 0
+  - platform: mqtt
+    name: "DoorBell"
+    state_topic: "button"
+    qos: 0
 
