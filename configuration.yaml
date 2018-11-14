@@ -110,12 +110,12 @@ panel_iframe:
     url: 'http://hassbian.local:4200/'
 
 camera:
-#  - platform: ffmpeg
-#    input: /dev/video0
-#    extra_arguments: -pred 1
+  - platform: ffmpeg
+    input: /dev/video0
+    extra_arguments: -pred 1
   - platform: local_file
-    file_path: /home/homeassistant/.homeassistant/www/dlib/nam.jpg
-
+    file_path: /home/homeassistant/.homeassistant/www/dlib/unknown.jpg
+    name: Owner
 ifttt:
   key: mdiCKdAnV_DbhPXBckd1ys0h1nGWTc-YPwdvzG8iSfK 
 
@@ -124,3 +124,4 @@ media_player:
     email: "khanh1997777@gmail.com"
     password: "Huyenkhanh"
     url: "amazon.com"
+  - platform: cmus

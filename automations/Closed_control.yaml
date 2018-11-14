@@ -1,0 +1,27 @@
+- alias: Closed_garage
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      to: 'closed'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Closed", "value1":"cửa Garage"}
+
+- alias: Closed_Door
+  trigger:
+    - platform: state
+      entity_id: cover.livingroom_door
+      to: 'closed'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Closed", "value1":"cửa chính"}
+
+- alias: Open_window
+  trigger:
+    - platform: state
+      entity_id: cover.bedroom_window
+      to: 'closed'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Closed", "value1":"cửa sổ"}
+

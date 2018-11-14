@@ -1,0 +1,12 @@
+  - platform: template
+    sensors:
+      family:
+        device_class: motion
+        value_template: "{{ is_state('light.person', 'on') }}"
+      guest:
+        device_class: motion
+        value_template: "{{ is_state('light.guest', 'on') }}"
+      detection:
+         device_class: safety
+         value_template: "{{ is_state('light.detector', 'on') }}"
+

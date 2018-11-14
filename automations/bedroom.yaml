@@ -1,0 +1,16 @@
+- alias: Bedroom window
+  trigger:
+    - platform: state
+      entity_id: cover.bedroom_window
+      to: 'closed'
+      for:
+        milliseconds: 500
+    - platform: state
+      entity_id: cover.bedroom_window
+      to: 'open'
+      for:
+        milliseconds: 500
+  action:
+    - service: cover.stop_cover
+      entity_id: cover.bedroom_window
+

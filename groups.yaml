@@ -2,62 +2,24 @@
     view: true
     icon: mdi:home
     entities:
-      - script.test1
-      - script.test
-      - group.alarm
-      - group.all_covers
-      - group.all_locks
-      - group.all_switches
-      - group.calendar
-      - group.door1
-      - group.door2
-      - group.fan
-      - group.light
-      - group.location
-      - group.network
-      - group.pc
-      - group.systemd
       - group.time_date
       - group.weather
-      - group.window
-  alarm:
-    name: Alarm
+      - group.celendar
+      - camera.ffmpeg
+      - group.livingroom
+      - group.bedroom
+      - group.kitchen
+      - group.bathroom
+      - group.garage    
+  time_date:
+    name: Time&Date
     entities:
+      - sun.sun
+      - sensor.time__date
       - sensor.time
-      - input_number.alarm_hour
-      - input_number.alarm_minute
-  pc:
-    name: Computer
-    entities:
-      - switch.pc_power
-      - input_select.pc
-  fan:
-    name: Fan
-    entities:
-      - switch.fan_1
-      - switch.kitchen_fan
-      - switch.bedroom_fan
-      - input_boolean.fan_timer
-      - input_boolean.fan_direction
-      - input_number.fan_speed
-      - input_number.fan_natural
-  network:
-    name: Network
-    entities:
-      - sensor.ipv4_address_wlan0
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
-      - sensor.speedtest_ping
-  systemd:
-    name: Systemd
-    view: yes
-    entities:
-      - sensor.cpu_speed
-      - sensor.memory_free
-      - sensor.memory_use_percent
+      - sensor.date
   weather:
     name: Weather
-    view: yes
     entities:
       - sensor.weather_symbol
       - sensor.moon
@@ -68,42 +30,114 @@
       - sensor.weather_cloudiness
       - sensor.weather_pressure
       - sensor.weather_precipitation
+  livingroom:
+    name: Livingroom
+    entities:
+      - sensor.temperature
+      - sensor.humidity
+      - history_graph.temperature
+      - history_graph.humidity
+      - cover.livingroom_door
+      - switch.livingroom_light
+      - automation.unknow
+      - switch.socket_1
+      - switch.socket_2
+  bedroom:
+    name: Bedroom
+    entities:
+      - cover.bedroom_window
+      - switch.bedroom_light
+      - switch.lamp
+      - switch.bedroom_fan
+      - input_boolean.fan_timer
+      - input_boolean.fan_direction
+      - input_number.fan_speed
+      - input_number.fan_natural
+  kitchen:
+    name: Kitchen 
+    entities: 
+      - switch.kitchen_light
+      - switch.kitchen_fan
+      - input_boolean.fan_timer
+      - sensor.time
+      - input_number.alarm_hour
+      - input_number.alarm_minute
+  bathroom:
+    name: Bathroom
+    entities: 
+      - switch.bathroom_light
+  garage: 
+    name: Garage
+    entities:
+      - cover.garage_door
+      - switch.garage_light
+  Opencv:
+    name: OpenCv
+    view: yes
+    icon: mdi:cctv
+    entities:
+      - camera.owner
+      - group.detector
+      - group.recognition
+      - binary_sensor.input
+      - switch.stop
+      - switch.close
+      - switch.open
+  detector:
+    name: Detector
+    entities:
+     - binary_sensor.detection
+     - binary_sensor.family
+     - binary_sensor.guest
+  recognition:
+    name: Recognition
+    entities:
+     - binary_sensor.blue
+     - binary_sensor.red
+     - binary_sensor.yellow
+  media:
+    name: Media
+    icon: mdi:television-classic
+    entities:
+      - media_player.this_device
+      - media_player.khanhs_echo_dot
+########################################################
+  celendar: 
+    name: Celendar
+    entities:
+      - calendar.ngay_le_o_viet_nam
+      - calendar.namunjted1234gmailcom
+  pc:
+    name: Computer
+    entities:
+      - switch.pc_power
+      - input_select.pc
+  network:
+    name: Network
+    entities:
+      - sensor.ipv4_address_wlan0
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping
+  computer:
+    name: Computer
+    view: yes
+    icon: mdi:desktop-classic
+    entities:
+      - group.systemd
+      - group.network
+      - group.pc
+      - group.alarm
+  systemd:
+    name: Systemd
+    entities:
+      - sensor.cpu_speed
+      - sensor.memory_free
+      - sensor.memory_use_percent
   location:
     name: Location
     entities:
       - device_tracker.google_maps_namunjted1234gmailcom
-  time_date:
-    name: Time&Date
-    entities:
-      - sun.sun
-      - sensor.time__date
-      - sensor.time
-      - sensor.date
-  light:
-    name: Lights
-    entities:
-      - switch.livingroom_light
-      - switch.bedroom_light
-      - switch.kitchen_light
-      - switch.garage_light
-      - switch.bathroom_light
-      - switch.lamp
-      - switch.lamp_1
-      - switch.open
-      - switch.close
-      - switch.stop
-  door1:
-    name: Garage_Doors
-    entities:
-      - cover.garage_door
-  door2:
-    name: Livingroom_Doors
-    entities:
-      - cover.livingroom_door
-  window:
-    name: Bedroom_Window
-    entities:
-      - cover.bedroom_window
   openclose:
     name: Open Closed Auto
     entities:
@@ -170,18 +204,3 @@
       - group.srchome
       - group.srcopenclose
       - group.srcfan
-  Opencv:
-    name: OpenCv
-    view: yes
-    icon: mdi:cctv
-    entities:
-      - light.detector
-      - light.person
-      - light.guest
-      - camera.local_file
-      - automation.rainy_day
-      - automation.detertor
-      - binary_sensor.input
-      - sensor.doorbel1
-
-

@@ -1,0 +1,7 @@
+- alias: Startup Hass
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: ifttt.trigger
+    data: {"event":"Hass_Start"}

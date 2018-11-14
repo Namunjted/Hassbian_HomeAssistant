@@ -10,6 +10,6 @@
       4: Bathroom Light
 ###################
       13: open
-      21: close
+      20: close
       26: stop
     invert_logic: 1

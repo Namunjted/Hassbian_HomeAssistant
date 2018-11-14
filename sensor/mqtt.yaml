@@ -20,4 +20,3 @@
     name: "DoorBell"
     state_topic: "button"
     qos: 0
-

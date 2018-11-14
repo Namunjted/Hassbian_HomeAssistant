@@ -1,0 +1,17 @@
+- alias: Timer
+  trigger:
+    platform: time
+    minutes: '/1'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.light_livingroom
+        state: 'on'
+      - condition: template
+        value_template: '{{ now().time().strftime("%H:%M") == states.sensor.alarm.state }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.light_livingroom
+

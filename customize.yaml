@@ -55,3 +55,13 @@ switch.fan_1:
 #############################
 group.all_automations:
   hidden: false
+############################
+sensor.humidity:
+  icon: mdi:water-percent
+sensor.temperature:
+  icon: mdi:temperature-celsius
+switch.socket_1:
+  icon: mdi:power-socket-us
+switch.socket_2:
+  icon: mdi:power-socket-au
+

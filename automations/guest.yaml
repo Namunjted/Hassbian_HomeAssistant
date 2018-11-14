@@ -1,0 +1,9 @@
+  - alias: 'Guest'
+    trigger:
+      - platform: mqtt
+        topic: "person/status"
+        payload: 'unknown'
+    action:
+      service: light.turn_on
+      entity_id: light.guest
+

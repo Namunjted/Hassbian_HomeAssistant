@@ -1,5 +1,5 @@
   - platform: mqtt
-    name: "lamp 1"
+    name: "socket 1"
     state_topic: "room-light"
     command_topic: "room-light"
     qos: 0
@@ -7,7 +7,7 @@
     payload_off: "off"
     
   - platform: mqtt
-    name: "Fan 1"
+    name: "socket 2"
     state_topic: "room-fan"
     command_topic: "room-fan"
     qos: 0

@@ -1,0 +1,31 @@
+- alias: Garage door
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      to: 'closed'
+      for:
+        seconds: 6
+    - platform: state
+      entity_id: cover.garage_door
+      to: 'open'
+      for:
+        seconds: 9
+  action:
+    - service: cover.stop_cover
+      entity_id: cover.garage_door
+- alias: Garage Light Auto
+  trigger:
+    - platform: state
+      entity_id: sensor.ldr
+      to: 'Dark'
+  action:
+    - service: switch.turn_on
+      entity_id: group.all_switches
+- alias: Motion
+  trigger:
+    - platform: state
+      entity_id: sensor.pir
+      to: 'motioned'  
+  action:
+    - service: cover.open_cover
+      entity_id: cover.garage_door

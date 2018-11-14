@@ -1,0 +1,89 @@
+#-------------Fan Off----------
+- alias: Fan power off
+  trigger:
+    platform: state
+    entity_id: input_boolean.fan_power
+    to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.electric_fan
+#-----------Fan On------------------------
+- alias: Fan power on
+  trigger:
+    platform: state
+    entity_id: input_boolean.fan_power
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.electric_fan
+#-----------Redirection Off---------------
+- alias: Fan direction off
+  trigger:
+    platform: state
+    entity_id: input_boolean.fan_direction
+    to: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.fan_direction
+#-----------Redirection On------------------------
+- alias: Fan direction on
+  trigger:
+    platform: state
+    entity_id: input_boolean.fan_direction
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fan_direction
+#-----------Change_speed_fan----------------------
+- alias: Fan change speed
+  trigger:
+    platform: state
+    entity_id: input_number.fan_speed
+  condition:
+    condition: state
+    entity_id: input_boolean.fan_power
+    state: 'on'
+  action:
+    service: script.turn_on
+    data_template:
+      entity_id: >
+       {% if trigger.from_state.state | int - trigger.to_state.state | int == 1 %}
+         script.fan_speed_2
+       {% else %}
+         script.fan_speed_1
+       {% endif %}
+#-----------Change_natural---------------------------
+- alias: Fan change natural
+  trigger:
+    platform: state
+    entity_id: input_number.fan_natural
+  condition:
+    condition: state
+    entity_id: input_boolean.fan_power
+    state: 'on'
+  action:
+    service: script.turn_on
+    data_template:
+      entity_id: >
+       {% if trigger.from_state.state | int - trigger.to_state.state | int == 1 %}
+         script.fan_natural_2
+       {% else %}
+         script.fan_natural_1
+       {% endif %}
+#--------------Turn off timer-----------------
+- alias: Fan Timer
+  trigger:
+    platform: time
+    minutes: '/1'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.socket_2
+        state: 'on'
+      - condition: template
+        value_template: '{{ now().time().strftime("%H:%M") == states.sensor.alarm.state }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.socket_2

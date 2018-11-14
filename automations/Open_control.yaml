@@ -1,0 +1,26 @@
+- alias: Open_garage
+  trigger:
+    - platform: state
+      entity_id: cover.garage_door
+      to: 'open'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Open", "value1":"cửa Garage"}
+
+- alias: Open_Door
+  trigger:
+    - platform: state
+      entity_id: cover.livingroom_door
+      to: 'open'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Open", "value1":"cửa chính"}
+
+- alias: Open_window  
+  trigger:
+    - platform: state
+      entity_id: cover.bedroom_window
+      to: 'open'
+  action:
+    - service: ifttt.trigger
+      data: {"event":"Open", "value1":"cửa sổ"}

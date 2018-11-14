@@ -8,6 +8,9 @@
 !lights
 !cover
 !binary_sensor
+!Code
+!custom_components
+!automations
 secrets.yaml
 home-assistant.log
 home-assistant_v2.db

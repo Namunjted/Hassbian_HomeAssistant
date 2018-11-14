@@ -1,0 +1,116 @@
+#---------------------------------- Main door ----------------------#
+- alias: Main door
+  trigger:
+    - platform: state
+      entity_id: cover.livingroom_door
+      to: 'open'
+      for:
+        seconds: 12
+    - platform: state
+      entity_id: cover.livingroom_door
+      to: 'closed'
+      for:
+        seconds: 13
+  action:
+    - service: cover.stop_cover
+      entity_id: cover.livingroom_door
+#---------------------------------Pi Button------------------------#
+- alias: 'Pi Button'
+  trigger:
+   - platform: state
+     entity_id: binary_sensor.input
+     from: 'off'
+     to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.stop
+- alias: 'Publish'
+  trigger:
+    - platform: state
+      entity_id: switch.stop
+      to: 'on' 
+  action:
+    - service: media_player.alexa_tts
+      entity_id: media_player.khanhs_echo_dot
+      data:
+        message: 'Hello, Please look at the camera'
+    - service: mqtt.publish
+      data:
+        topic: "detect"
+        payload: 'Detect'
+#-------------------------------Recognize Khanh----------------------#
+- alias: 'Khanh'
+  trigger:
+    - platform: mqtt
+      topic: "person/status"
+      payload: 'khanh'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.open
+    - service: switch.turn_off
+      entity_id: switch.stop
+    - service: cover.open_cover
+      entity_id: cover.livingroom_door
+    - service: media_player.alexa_tts
+      entity_id: media_player.khanhs_echo_dot
+      data:
+        message: 'Hello Khanh, Welcome home'
+    - service: camera.local_file_update_file_path
+      entity_id: camera.local_file
+      data_template:
+        file_path: /home/homeassistant/.homeassistant/www/dlib/khanh.jpg
+#----------------------------- Unknow--------------------------------#
+- alias: 'Unknown'
+  trigger:
+    - platform: mqtt
+      topic: "person/status"
+      payload: 'unknown'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.close
+    - service: switch.turn_off
+      entity_id: switch.stop 
+    - service: ifttt.trigger
+      data: {"event":"Unknown"}
+    - service: media_player.alexa_tts
+      entity_id: media_player.khanhs_echo_dot
+      data:
+        message: 'Hello, Welcome to my house, Wait a moment'
+#---------------------------Vung -----------------------------------#
+- alias: 'Vung'
+  trigger:
+    - platform: mqtt
+      topic: "person/status"
+      payload: 'vung'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.open
+    - service: switch.turn_off
+      entity_id: switch.stop
+    - service: media_player.alexa_tts
+      entity_id: media_player.khanhs_echo_dot
+      data:
+        message: 'Hello vung, Welcome home'
+    - service: camera.local_file_update_file_path
+      entity_id: camera.local_file
+      data_template:
+        file_path: /home/homeassistant/.homeassistant/www/dlib/vung.jpg
+#--------------------------Nam-------------------------------------# 
+- alias: 'Nam'
+  trigger:
+    - platform: mqtt
+      topic: "person/status"
+      payload: 'nam'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.open
+    - service: switch.turn_off
+      entity_id: switch.stop
+    - service: media_player.alexa_tts
+      entity_id: media_player.khanhs_echo_dot
+      data:
+        message: 'Hello Nam osin'
+    - service: camera.local_file_update_file_path
+      entity_id: camera.local_file
+      data_template:
+        file_path: /home/homeassistant/.homeassistant/www/dlib/nam.jpg
